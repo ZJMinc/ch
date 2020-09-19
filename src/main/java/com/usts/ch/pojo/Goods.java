@@ -69,7 +69,7 @@ public class Goods {
     }
 
     public String getTitle(){
-        return seller;
+        return title;
     }
     public void setTitle(String title){
         this.title = title;
