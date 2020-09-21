@@ -24,6 +24,7 @@ public class Goods {
     String seller;
     Date date;
     String abs;
+    Double price;
 
     public Category getCategory(){
         return category;
@@ -73,5 +74,12 @@ public class Goods {
     }
     public void setTitle(String title){
         this.title = title;
+    }
+
+    public Double getPrice(){
+        return price;
+    }
+    public void setPrice(Double price){
+        this.price = price;
     }
 }
