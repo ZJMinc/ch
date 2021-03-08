@@ -5,6 +5,8 @@ package com.usts.ch.pojo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.Date;
+
 //实体类
 @Entity
 //对应表名
@@ -17,9 +19,27 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     int id;
-
     String username;
     String password;
+    String phone;
+    String email;
+    int status;
+    Date create_time;
+    int permissions;
+//    String salt;
+
+    @Override
+    public String toString() {
+        return "{" +
+            " id='" + getId() + "'" +
+            ", username='" + getUsername() + "'" +
+            ", phone='" + getPhone() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", status='" + getStatus() + "'" +
+            ", create_time='" + getCreatetime() + "'" +
+            ", permissions='" + getPermissions() + "'" +
+            "}";
+    }
 
     public int getId() {
         return id;
@@ -43,5 +63,45 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public Date getCreatetime() {
+        return create_time;
+    }
+
+    public void setCreatetime(Date create_time) {
+        this.create_time = create_time;
+    }
+
+    public int getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(int permissions) {
+        this.permissions = permissions;
     }
 }

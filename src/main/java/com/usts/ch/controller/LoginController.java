@@ -2,6 +2,7 @@ package com.usts.ch.controller;
 
 import com.usts.ch.pojo.User;
 import com.usts.ch.result.Result;
+import com.usts.ch.result.ResultUtil;
 import com.usts.ch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,16 +26,9 @@ public class LoginController {
 
         User user = userService.get(username,requestUser.getPassword());
         if(null == user){
-            return new Result(400);
+            return ResultUtil.error(400,"登录失败");
         } else {
-            return new Result(200);
+            return ResultUtil.success(user);
         }
-//        if (!Objects.equals("admin", username) || !Objects.equals("123456", requestUser.getPassword())) {
-//            String message = "账号密码错误";
-//            System.out.println("test");
-//            return new Result(400);
-//        } else {
-//            return new Result(200);
-//        }
     }
 }

@@ -27,9 +27,13 @@ public class GoodsService {
     public void deleteById(int id){
         goodsDAO.deleteById(id);
     }
+    public Goods getInfo(int id){
+        goodsDAO.findById(id);
+        return goodsDAO.findById(id);
+    }
 
-    public List<Goods> listByCategory(int cid){
-        Category category = categoryService.get(cid);
+    public List<Goods> listByCategory(int id){
+        Category category = categoryService.get(id);
         return goodsDAO.findAllByCategory(category);
     }
 

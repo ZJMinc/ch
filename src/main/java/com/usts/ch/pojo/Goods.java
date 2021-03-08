@@ -17,7 +17,7 @@ public class Goods {
 
     @ManyToOne
     @JoinColumn(name = "cid")
-    private  Category category;
+    private Category category;
 
     String cover;
     String title;
@@ -26,13 +26,26 @@ public class Goods {
     String abs;
     Double price;
 
-    public Category getCategory(){
-        return category;
-    }
-    public void setCategory(Category category){
-        this.category = category;
+    @Override
+    public String toString() {
+        return "{" +
+                " id='" + getId() + "'" +
+                ", cover='" + getCover() + "'" +
+                ", title='" + getTitle() + "'" +
+                ", seller='" + getSeller() + "'" +
+                ", date='" + getDate() + "'" +
+                ", abs='" + getAbs() + "'" +
+                ", price='" + getPrice() + "'" +
+                "}";
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
     public int getId() {
         return id;
     }
