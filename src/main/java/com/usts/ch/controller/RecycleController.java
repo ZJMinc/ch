@@ -51,8 +51,6 @@ public class RecycleController {
     @CrossOrigin
     @GetMapping("/api/categories/{cid}/goods")
     public List<Goods> listBycategory(@PathVariable("cid") int cid) throws Exception{
-
-        System.out.print(cid);
         if (0 != cid){
             return goodsService.listByCategory(cid);
         }else {

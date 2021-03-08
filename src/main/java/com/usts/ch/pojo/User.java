@@ -25,7 +25,7 @@ public class User {
     String email;
     int status;
     Date create_time;
-    int permissions;
+    String permissions;
 //    String salt;
 
     @Override
@@ -97,11 +97,11 @@ public class User {
         this.create_time = create_time;
     }
 
-    public int getPermissions() {
+    public String getPermissions() {
         return permissions;
     }
 
-    public void setPermissions(int permissions) {
+    public void setPermissions(String permissions) {
         this.permissions = permissions;
     }
 }
