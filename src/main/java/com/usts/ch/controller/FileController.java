@@ -23,7 +23,8 @@ public class FileController {
             f.getParentFile().mkdirs();
         try {
             file.transferTo(f);
-            String imgURL = "http://www.kdcnxx.cn/img/" + f.getName();
+//            String imgURL = "http://kdcnxx.cn/api/file/" + f.getName();
+            String imgURL = "http://www.kdcnxx.cn/api/file/" + f.getName();
             return imgURL;
         } catch (IOException e) {
             e.printStackTrace();
