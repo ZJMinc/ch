@@ -24,7 +24,7 @@ public class FileController {
         try {
             file.transferTo(f);
 //            String imgURL = "http://kdcnxx.cn/api/file/" + f.getName();
-            String imgURL = "http://www.kdcnxx.cn/api/file/" + f.getName();
+            String imgURL = "http://www.kdcnxx.cn/img/" + f.getName();
             return imgURL;
         } catch (IOException e) {
             e.printStackTrace();
