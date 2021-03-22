@@ -24,8 +24,9 @@ public class User {
     String phone;
     String email;
     int status;
-    Date create_time;
+    long create_time;
     String permissions;
+    String userpic;
 //    String salt;
 
     @Override
@@ -38,6 +39,7 @@ public class User {
             ", status='" + getStatus() + "'" +
             ", create_time='" + getCreatetime() + "'" +
             ", permissions='" + getPermissions() + "'" +
+            ", userpic='" + getUserpic() + "'" +
             "}";
     }
 
@@ -89,11 +91,11 @@ public class User {
         this.status = status;
     }
 
-    public Date getCreatetime() {
+    public long getCreatetime() {
         return create_time;
     }
 
-    public void setCreatetime(Date create_time) {
+    public void setCreatetime(long create_time) {
         this.create_time = create_time;
     }
 
@@ -103,5 +105,12 @@ public class User {
 
     public void setPermissions(String permissions) {
         this.permissions = permissions;
+    }
+    public String getUserpic() {
+        return userpic;
+    }
+
+    public void setUserpic(String userpic) {
+        this.userpic = userpic;
     }
 }

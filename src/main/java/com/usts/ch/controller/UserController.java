@@ -7,6 +7,8 @@ import com.usts.ch.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 public class UserController {
     @Autowired
@@ -15,7 +17,20 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/api/register")
     public User addOrUpdate(@RequestBody User user) throws Exception{
+        user.setPermissions("0");
+        Date date = new Date();
+        long time = date.getTime();//当前时间的毫秒数
+        user.setCreatetime(time);
         userService.addOrUpdate(user);
+        System.out.print(user);
+        return user;
+    }
+
+    @CrossOrigin
+    @PostMapping("/api/user/{id}")
+    public User addOrUpdate1(@RequestBody User user) throws Exception{
+        userService.addOrUpdate(user);
+        System.out.print(user);
         return user;
     }
 
