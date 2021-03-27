@@ -32,6 +32,11 @@ public class GoodsService {
         return goodsDAO.findById(id);
     }
 
+    public List<Goods> listBySid(int sid){
+        goodsDAO.findAllBySid(sid);
+        return goodsDAO.findAllBySid(sid);
+    }
+
     public List<Goods> listByCategory(int id){
         Category category = categoryService.get(id);
         return goodsDAO.findAllByCategory(category);

@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface GoodsDAO extends JpaRepository<Goods,Integer> {
     List<Goods> findAllByCategory(Category category);
+    List<Goods> findAllBySid(int sid);
     List<Goods> findAllByTitleLike(String keyword);
     Goods findById(int id);
 }

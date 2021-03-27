@@ -1,6 +1,7 @@
 package com.usts.ch.controller;
 
 import com.usts.ch.pojo.Goods;
+import com.usts.ch.pojo.User;
 import com.usts.ch.result.Result;
 import com.usts.ch.result.ResultUtil;
 import com.usts.ch.service.GoodsService;
@@ -19,6 +20,12 @@ public class RecycleController {
     @GetMapping("/api/goods/list")
     public List<Goods> list() throws Exception{
         return goodsService.list();
+    }
+
+    @CrossOrigin
+    @GetMapping("/api/goods/list/{sid}")
+    public List<Goods> listBySid(@PathVariable("sid") int sid) throws Exception{
+        return goodsService.listBySid(sid);
     }
 
     @CrossOrigin
@@ -43,9 +50,17 @@ public class RecycleController {
     }
 
     @CrossOrigin
-    @PostMapping("/api/goods/{id}")
+    @DeleteMapping("/api/goods/{id}")
     public void delete(@PathVariable("id") int id) throws Exception{
         goodsService.deleteById(id);
+    }
+
+    @CrossOrigin
+    @PostMapping("/api/goods/{id}")
+    public Goods update(@RequestBody Goods goods) throws Exception{
+        goodsService.addOrUpdate(goods);
+        System.out.print(goods);
+        return goods;
     }
 
     @CrossOrigin
