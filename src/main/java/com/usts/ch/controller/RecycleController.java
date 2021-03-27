@@ -4,13 +4,10 @@ import com.usts.ch.pojo.Goods;
 import com.usts.ch.result.Result;
 import com.usts.ch.result.ResultUtil;
 import com.usts.ch.service.GoodsService;
-import com.usts.ch.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -38,6 +35,9 @@ public class RecycleController {
     @CrossOrigin
     @PostMapping("/api/goods")
     public Goods add(@RequestBody Goods goods) throws Exception{
+        Date date = new Date();
+        long time = date.getTime();//当前时间的毫秒数
+        goods.setDate(time);
         goodsService.addOrUpdate(goods);
         return goods;
     }

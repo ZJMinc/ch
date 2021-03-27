@@ -16,7 +16,7 @@ public class UserController {
 
     @CrossOrigin
     @PostMapping("/api/register")
-    public User addOrUpdate(@RequestBody User user) throws Exception{
+    public User add(@RequestBody User user) throws Exception{
         user.setPermissions("0");
         Date date = new Date();
         long time = date.getTime();//当前时间的毫秒数
@@ -28,7 +28,7 @@ public class UserController {
 
     @CrossOrigin
     @PostMapping("/api/user/{id}")
-    public User addOrUpdate1(@RequestBody User user) throws Exception{
+    public User update(@RequestBody User user) throws Exception{
         userService.addOrUpdate(user);
         System.out.print(user);
         return user;

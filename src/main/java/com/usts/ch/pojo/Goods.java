@@ -3,7 +3,6 @@ package com.usts.ch.pojo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "goods")
@@ -22,9 +21,10 @@ public class Goods {
     String cover;
     String title;
     String seller;
-    Date date;
+    long date;
     String abs;
     Double price;
+    int sid;
 
     @Override
     public String toString() {
@@ -33,6 +33,7 @@ public class Goods {
                 ", cover='" + getCover() + "'" +
                 ", title='" + getTitle() + "'" +
                 ", seller='" + getSeller() + "'" +
+                ", sid='" + getSid() + "'" +
                 ", date='" + getDate() + "'" +
                 ", abs='" + getAbs() + "'" +
                 ", price='" + getPrice() + "'" +
@@ -42,7 +43,6 @@ public class Goods {
     public Category getCategory() {
         return category;
     }
-
     public void setCategory(Category category) {
         this.category = category;
     }
@@ -54,10 +54,10 @@ public class Goods {
         this.id = id;
     }
 
-    public Date getDate(){
+    public long getDate(){
         return date;
     }
-    public void setDate(Date date){
+    public void setDate(long date){
         this.date = date;
     }
 
@@ -80,6 +80,13 @@ public class Goods {
     }
     public void setSeller(String seller){
         this.seller = seller;
+    }
+
+    public int getSid() {
+        return sid;
+    }
+    public void setSid(int sid) {
+        this.sid = sid;
     }
 
     public String getTitle(){
